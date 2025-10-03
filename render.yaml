@@ -1,0 +1,41 @@
+services:
+  # Backend API Service
+  - type: web
+    name: internify-backend
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: PORT
+        value: 8080
+      - key: DATABASE_URL
+        fromDatabase:
+          name: internify-db
+          property: connectionString
+      - key: DB_USERNAME
+        fromDatabase:
+          name: internify-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: internify-db
+          property: password
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MAIL_USERNAME
+        value: internifyplatform@gmail.com
+      - key: MAIL_PASSWORD
+        sync: false  # Set this manually in Render dashboard
+      - key: ML_API_URL
+        value: http://localhost:5000  # Update with your ML API URL when deployed
+    healthCheckPath: /actuator/health
+
+databases:
+  - name: internify-db
+    databaseName: internify_db
+    plan: free
+    region: oregon
+

@@ -1,44 +1,46 @@
-# Compiled class files
-*.class
-
-# Log files
-*.log
-
-# Package files
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# Maven
+HELP.md
 target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# IDE files
-.idea/
-*.iml
-.vscode/
+### STS ###
+.apt_generated
 .classpath
+.factorypath
 .project
-.settings/
-*.swp
-*.swo
-*~
+.settings
+.springBeans
+.sts4-cache
 
-# OS files
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Uploads - Don't commit uploaded files ###
+src/main/resources/uploads/job_descriptions/
+src/main/resources/uploads/resumes/
+
+### Environment Variables ###
+.env
+.env.local
+.env.*.local
+
+### OS ###
 .DS_Store
 Thumbs.db
-
-# Application specific
-uploads/
